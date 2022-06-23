@@ -11,6 +11,7 @@
     "@mdi/font": "5.9.55",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
+    "css-loader": "^5.2.7",
     "vue": "^3.2.13",
     "vue-router": "^4.0.16",
     "vuetify": "^3.0.0-beta.0",
@@ -30,6 +31,8 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vuejs-accessibility": "^1.1.0",
+    "sass": "^1.49.9",
+    "sass-loader": "^8.0.2",
     "prettier": "^2.6.2",
     "vue-cli-plugin-vuetify": "~2.5.1",
     "webpack-plugin-vuetify": "^2.0.0-alpha.0"
