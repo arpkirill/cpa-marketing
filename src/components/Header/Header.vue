@@ -25,15 +25,19 @@
     <v-toolbar-title :class="$vuetify.theme.dark ? 'primary--text' : null" >
       Личный кабинет
     </v-toolbar-title>
-    <v-spacer ></v-spacer>
-    <v-btn icon >
-      <v-icon >mdi-magnify</v-icon>
-    </v-btn>
+    <div class="flex-1-1-auto d-flex align-center justify-end" >
+      <v-avatar >
+        <v-img
+          width="100%"
+          src="https://cdn.vuetifyjs.com/images/john.jpg"
+          alt="John" />
+      </v-avatar>
+    </div>
   </v-app-bar>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Header',
@@ -43,13 +47,15 @@ export default {
     }
   },
   computed: {
-    ...mapState( 'layout', { drawer: ( state ) => state.drawer } ),
+    ...mapGetters( { drawer: 'layout/DRAWER_STATE' } ),
     DRAWER_STATE: {
       get() {
         return this.drawer
       },
     },
   },
-  methods: { ...mapActions( 'layout', [ 'TOGGLE_DRAWER' ] ) },
+  methods: {
+    ...mapActions( { TOGGLE_DRAWER: 'layout/TOGGLE_DRAWER' } ),
+  },
 }
 </script>

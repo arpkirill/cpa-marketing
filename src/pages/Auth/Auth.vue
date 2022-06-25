@@ -9,7 +9,7 @@
         <div class="d-flex" >
           <v-img
             src="../../assets/logo.svg"
-            width="200" ></v-img>
+            width="100%" ></v-img>
           <p >
             Личный <br />
             кабинет
