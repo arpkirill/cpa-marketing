@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '@/components/Layout/Layout'
 import Dashboard from '@/pages/Dashboard/Dashboard'
 import Auth from '@/pages/Auth/Auth'
+import Profile from '@/pages/Profile/Profile'
 
 const routes = [
   { path: '/', redirect: { name: 'Dashboard' } },
@@ -21,6 +22,17 @@ const routes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: Dashboard,
+        meta: {
+          title: 'Главная',
+        },
+      },
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: Profile,
+        meta: {
+          title: 'Профиль',
+        },
       },
     ],
   },
