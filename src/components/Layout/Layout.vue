@@ -30,6 +30,24 @@ export default {
 }
 </script>
 
+<style lang="scss">
+@import '../../styles/_variables.scss';
+
+body {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-bg;
+    border-radius: 36px;
+    border: none;
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 .footer {
   align-items: flex-end;

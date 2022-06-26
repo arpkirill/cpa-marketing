@@ -7,6 +7,7 @@
     color="primary"
     dark >
     <v-btn
+      v-if="$vuetify.display.mdAndDown"
       class="mx-1"
       @click.stop="TOGGLE_DRAWER" >
       <template v-if="DRAWER_STATE" >
@@ -25,14 +26,6 @@
     <v-toolbar-title :class="$vuetify.theme.dark ? 'primary--text' : null" >
       Личный кабинет
     </v-toolbar-title>
-    <div class="flex-1-1-auto d-flex align-center justify-end" >
-      <v-avatar >
-        <v-img
-          width="100%"
-          src="https://cdn.vuetifyjs.com/images/john.jpg"
-          alt="John" />
-      </v-avatar>
-    </div>
   </v-app-bar>
 </template>
 

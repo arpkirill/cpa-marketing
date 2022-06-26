@@ -1,4 +1,3 @@
-
 // Sidebar //
 $drawer-items-padding: 32px !default;
 $navigation-drawer-mini-variant-width: 96px !important;
@@ -7,6 +6,8 @@ $card-title-color: var(--v-greyMedium-base);
 
 // Layout //
 $body-bg-dark: #13131a;
+$scrollbar-bg: #b5b5b5;
+
 $body-bg: #f6f7ff !default;
 $content-padding: 24px;
 
@@ -25,8 +26,7 @@ $fs-medium: 0.875rem !default; // 14px
 $fs-index: 0.75rem !default; // 12px
 
 // Card //
-$card-shadow: 0 3px 11px 0 #e8eafc, 0 3px 3px -2px #b2b2b21a,
-  0 1px 8px 0 #9a9a9a1a;
+$card-shadow: 0 3px 11px 0 #e8eafc, 0 3px 3px -2px #b2b2b21a, 0 1px 8px 0 #9a9a9a1a;
 
 // Buttons //
 $button-shadow: $card-shadow;
