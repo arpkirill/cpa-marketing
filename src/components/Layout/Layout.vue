@@ -5,7 +5,7 @@
     <div class="wrapper" >
       <Breadcrumbs />
       <router-view />
-      <Footer class="footer" />
+      <!-- <Footer class="footer" /> -->
       <!-- <Helper /> -->
     </div>
   </v-main>
@@ -21,8 +21,8 @@ import Helper from '@/components/Helper/Helper'
 export default {
   name: 'Layout',
   components: {
-    //  Helper,
-    Footer,
+    // Helper,
+    // Footer,
     Header,
     Sidebar,
     Breadcrumbs,

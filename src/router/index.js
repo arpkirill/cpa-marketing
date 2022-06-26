@@ -4,6 +4,7 @@ import Layout from '@/components/Layout/Layout'
 import Dashboard from '@/pages/Dashboard/Dashboard'
 import Auth from '@/pages/Auth/Auth'
 import Profile from '@/pages/Profile/Profile'
+import Finance from '@/pages/Finance/Finance'
 
 const routes = [
   { path: '/', redirect: { name: 'Dashboard' } },
@@ -32,6 +33,14 @@ const routes = [
         component: Profile,
         meta: {
           title: 'Профиль',
+        },
+      },
+      {
+        path: 'finance',
+        name: 'Finance',
+        component: Finance,
+        meta: {
+          title: 'Финансы',
         },
       },
     ],
