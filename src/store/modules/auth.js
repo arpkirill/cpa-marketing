@@ -37,7 +37,7 @@ export default {
         }
       } else {
         dispatch( 'loginError', 'Что-то пошло не так. Попробуйте позже' )
-      }
+      } 
     },
     async doInit( { dispatch, commit } ) {
       try {

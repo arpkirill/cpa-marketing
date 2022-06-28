@@ -4,6 +4,7 @@
   <v-main class="content mx-0 mx-md-2" >
     <div class="wrapper" >
       <Breadcrumbs />
+      <v-btn @click="$store.dispatch('snackbar/showSnackbar', 'text')" />
       <router-view />
       <!-- <Footer class="footer" /> -->
       <!-- <Helper /> -->
