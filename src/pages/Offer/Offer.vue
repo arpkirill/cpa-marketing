@@ -1,9 +1,9 @@
 <template >
-  <router-view />
+  <v-container > Offer </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Support',
+  name: 'Offer',
 }
 </script>

@@ -1,9 +1,9 @@
 <template >
-  <router-view />
+  <v-container > Chat </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Support',
+  name: 'Chat',
 }
 </script>

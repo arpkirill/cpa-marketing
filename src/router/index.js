@@ -9,6 +9,8 @@ import Finance from '@/pages/Finance/Finance'
 import Clients from '@/pages/Clients/Clients'
 import Partners from '@/pages/Partners/Partners'
 import Support from '@/pages/Support/Support'
+import Chat from '@/pages/Chat/Chat'
+import Offer from '@/pages/Offer/Offer'
 
 const routes = [
   { path: '/', redirect: { name: 'Dashboard' } },
@@ -70,6 +72,24 @@ const routes = [
         meta: {
           title: 'Помощь',
         },
+        children: [
+          {
+            path: 'chat',
+            name: 'Chat',
+            component: Chat,
+            meta: {
+              title: 'Чат',
+            },
+          },
+          {
+            path: 'offer',
+            name: 'Offer',
+            component: Offer,
+            meta: {
+              title: 'Правила',
+            },
+          },
+        ],
       },
     ],
   },

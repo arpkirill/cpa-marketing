@@ -4,27 +4,49 @@
     clipped
     v-model="DRAWER_STATE" >
     <v-list >
-      <v-list-item
-        link
-        v-for="item in items"
-        :key="item.title"
-        :prepend-icon="item.icon"
-        :title="item.title"
-        :value="item.value"
-        @click="$router.push({ name: item.route })" />
+      <template
+        v-for="navLink in navLinks"
+        :key="navLink.title" >
+        <v-list-group
+          v-if="navLink.subLinks"
+          no-action >
+          <template v-slot:activator="{ props }" >
+            <v-list-item
+              link
+              v-bind="props"
+              :prepend-icon="navLink.icon"
+              :title="navLink.title"
+              :value="navLink.value" />
+          </template>
+          <v-list-item
+            link
+            v-for="subLink in navLink.subLinks"
+            :key="subLink.title"
+            :title="subLink.title"
+            :value="subLink.value"
+            @click="$router.push({ name: subLink.route })" />
+        </v-list-group>
+        <v-list-item
+          v-else
+          link
+          :prepend-icon="navLink.icon"
+          :title="navLink.title"
+          :value="navLink.value"
+          @click="$router.push({ name: navLink.route })" />
+      </template>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-import routes from '../../enums/routes.js'
+import navLinks from '../../enums/navLinks.js'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Sidebar',
   data() {
     return {
-      items: routes,
+      navLinks: navLinks,
     }
   },
   computed: {
