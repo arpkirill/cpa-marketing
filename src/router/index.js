@@ -1,10 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Layout from '@/components/Layout/Layout'
-import Dashboard from '@/pages/Dashboard/Dashboard'
+
 import Auth from '@/pages/Auth/Auth'
+import Dashboard from '@/pages/Dashboard/Dashboard'
 import Profile from '@/pages/Profile/Profile'
 import Finance from '@/pages/Finance/Finance'
+import Clients from '@/pages/Clients/Clients'
+import Partners from '@/pages/Partners/Partners'
+import Support from '@/pages/Support/Support'
 
 const routes = [
   { path: '/', redirect: { name: 'Dashboard' } },
@@ -41,6 +45,30 @@ const routes = [
         component: Finance,
         meta: {
           title: 'Финансы',
+        },
+      },
+      {
+        path: 'clients',
+        name: 'Clients',
+        component: Clients,
+        meta: {
+          title: 'Клиенты',
+        },
+      },
+      {
+        path: 'partners',
+        name: 'Partners',
+        component: Partners,
+        meta: {
+          title: 'Агенты',
+        },
+      },
+      {
+        path: 'support',
+        name: 'Support',
+        component: Support,
+        meta: {
+          title: 'Помощь',
         },
       },
     ],

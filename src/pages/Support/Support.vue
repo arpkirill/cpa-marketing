@@ -1,9 +1,9 @@
 <template >
-  <v-container > Profile </v-container>
+  <v-container > Support </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Profile',
+  name: 'Support',
 }
 </script>
