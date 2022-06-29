@@ -181,10 +181,19 @@ body {
 
 // menu
 .v-menu__content.menuable__content__active {
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
   .v-list-item__title {
     font-size: 1rem !important;
     font-weight: 400;
+  }
+}
+
+// table
+.v-table__wrapper {
+  thead tr th {
+    font-size: 1rem !important;
+    font-weight: 500;
+    color: rgb(0, 0, 0) !important;
+    text-align: left;
   }
 }

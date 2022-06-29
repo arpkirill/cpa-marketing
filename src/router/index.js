@@ -31,6 +31,7 @@ const routes = [
         component: Dashboard,
         meta: {
           title: 'Главная',
+          isBreadcrumbs: false,
         },
       },
       {

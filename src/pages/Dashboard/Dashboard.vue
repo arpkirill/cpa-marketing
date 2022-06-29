@@ -48,6 +48,96 @@
     <v-row >
       <v-col
         sm="6"
+        md="3"
+        cols="12" >
+        <v-card class="pa-3" >
+          <v-card-title >
+            <v-spacer />
+            <div class="text-center" >
+              <v-icon size="64" >
+                mdi-chevron-right
+              </v-icon>
+              <div >Текущий баланс</div>
+            </div>
+            <v-spacer />
+          </v-card-title>
+          <v-card-text >
+            <div class="text-h5 text-center" >
+              5 000₽
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col
+        sm="6"
+        md="3"
+        cols="12" >
+        <v-card class="pa-3" >
+          <v-card-title >
+            <v-spacer />
+            <div class="text-center" >
+              <v-icon size="64" >
+                mdi-chevron-right
+              </v-icon>
+              <div >За все время</div>
+            </div>
+            <v-spacer />
+          </v-card-title>
+          <v-card-text >
+            <div class="text-h5 text-center" >
+              5 000₽
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col
+        sm="6"
+        md="3"
+        cols="12" >
+        <v-card class="pa-3" >
+          <v-card-title >
+            <v-spacer />
+            <div class="text-center" >
+              <v-icon size="64" >
+                mdi-chevron-right
+              </v-icon>
+              <div >Агентов</div>
+            </div>
+            <v-spacer />
+          </v-card-title>
+          <v-card-text >
+            <div class="text-h5 text-center" >
+              2
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col
+        sm="6"
+        md="3"
+        cols="12" >
+        <v-card class="pa-3" >
+          <v-card-title >
+            <v-spacer />
+            <div class="text-center" >
+              <v-icon size="64" >
+                mdi-chevron-right
+              </v-icon>
+              <div >Клиентов</div>
+            </div>
+            <v-spacer />
+          </v-card-title>
+          <v-card-text >
+            <div class="text-h5 text-center" >
+              5
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row >
+      <v-col
+        sm="6"
         md="4"
         cols="12" >
         <v-card class="pa-3" >
@@ -70,7 +160,7 @@
               full-width
               hide-details
               append-inner-icon="mdi-content-copy"
-              @click:append-inner="show1 = !show1" >localhost:8080/p/104034
+              @click:append-inner="show1 = !show1" >104034
             </v-text-field>
           </v-card-actions>
         </v-card>
@@ -128,7 +218,7 @@
               full-width
               hide-details
               append-inner-icon="mdi-content-copy"
-              @click:append-inner="show1 = !show1" >localhost:8080/p/104034
+              @click:append-inner="copy('localhost:8080/p/104034э')" >localhost:8080/p/104034
             </v-text-field>
           </v-card-actions>
         </v-card>
@@ -147,6 +237,12 @@ export default {
     return {
       show1: true,
     }
+  },
+  methods: {
+    copy( value ) {
+      window.navigator.clipboard.writeText( value )
+      this.$store.dispatch( 'snackbar/showSnackbar', 'Ссылка скопирована' )
+    },
   },
 }
 </script>
