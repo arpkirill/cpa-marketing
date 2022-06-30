@@ -2,13 +2,11 @@
   <v-card >
     <v-form >
       <v-container >
-        <!--
-          <v-row >
+        <v-row >
           <v-col >
             <Card :labels="formData" />
           </v-col>
-        </v-row> 
-        --> 
+        </v-row>
         <v-row >
           <v-col
             class="pb-0 pt-0"
@@ -85,7 +83,7 @@ import Card from '../Card/Card.vue'
 export default {
   name: 'CardForm',
   components: {
-    //  Card
+    Card,
   },
   data() {
     return {

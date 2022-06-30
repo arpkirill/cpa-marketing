@@ -26,14 +26,23 @@
     <v-toolbar-title :class="$vuetify.theme.dark ? 'primary--text' : null" >
       Личный кабинет
     </v-toolbar-title>
+    <v-spacer />
+    <div class="d-flex align-center" >
+      <AppBarUserMenu />
+    </div>
   </v-app-bar>
 </template>
 
 <script>
+import AppBarUserMenu from '../AppBarUserMenu/AppBarUserMenu.vue'
+
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Header',
+  components: {
+    AppBarUserMenu,
+  },
   data() {
     return {
       user: '',

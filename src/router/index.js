@@ -11,9 +11,13 @@ import Partners from '@/pages/Partners/Partners'
 import Support from '@/pages/Support/Support'
 import Chat from '@/pages/Chat/Chat'
 import Offer from '@/pages/Offer/Offer'
+import Error from '@/pages/Error/Error'
 
 const routes = [
-  { path: '/', redirect: { name: 'Dashboard' } },
+  {
+    path: '/',
+    redirect: { name: 'Dashboard' },
+  },
   {
     path: '/auth',
     name: 'Auth',
@@ -93,6 +97,15 @@ const routes = [
         ],
       },
     ],
+  },
+  {
+    path: '/error-404',
+    name: 'Error-404',
+    component: Error,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: 'error-404',
   },
 ]
 

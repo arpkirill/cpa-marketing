@@ -2,7 +2,7 @@
   <v-container >
     <v-row >
       <v-col cols="12" >
-        <CardForm />
+        <!-- <CardForm /> -->
       </v-col>
     </v-row>
   </v-container>
@@ -14,7 +14,7 @@ import CardForm from '../../components/CardForm/CardForm.vue'
 export default {
   name: 'Profile',
   components: {
-    CardForm,
+    // CardForm,
   },
   data() {
     return {

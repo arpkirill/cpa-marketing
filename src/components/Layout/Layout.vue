@@ -5,7 +5,15 @@
     <div class="wrapper" >
       <Breadcrumbs v-if="$route.meta.hasOwnProperty('isBreadcrumbs') ? $route.meta.isBreadcrumbs : true" />
       <!-- <v-btn @click="$store.dispatch('snackbar/showSnackbar', 'text')" /> -->
-      <router-view />
+
+      <router-view v-slot="{ Component }" >
+        <transition
+          name="fade"
+          mode="out-in" >
+          <component :is="Component" />
+        </transition>
+      </router-view>
+
       <!-- <Footer class="footer" /> -->
       <!-- <Helper /> -->
     </div>
@@ -58,5 +66,14 @@ body {
   flex-direction: column;
   display: flex;
   min-height: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
