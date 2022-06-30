@@ -12,6 +12,7 @@ import Support from '@/pages/Support/Support'
 import Chat from '@/pages/Chat/Chat'
 import Offer from '@/pages/Offer/Offer'
 import Error from '@/pages/Error/Error'
+import Faq from '@/pages/FAQ/FAQ'
 
 const routes = [
   {
@@ -92,6 +93,14 @@ const routes = [
             component: Offer,
             meta: {
               title: 'Правила',
+            },
+          },
+          {
+            path: 'faq',
+            name: 'Faq',
+            component: Faq,
+            meta: {
+              title: 'FAQ',
             },
           },
         ],

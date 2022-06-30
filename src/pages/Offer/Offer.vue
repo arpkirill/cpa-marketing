@@ -1,9 +1,9 @@
 <template >
-  <v-container > Offer </v-container>
+  <v-container > FAQ </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Offer',
+  name: 'FAQ',
 }
 </script>

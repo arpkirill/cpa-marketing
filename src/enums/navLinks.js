@@ -17,6 +17,7 @@ export default [
     subLinks: [
       { title: 'Правила', value: 'Offer', route: 'Offer' },
       { title: 'Чат', value: 'Chat', route: 'Chat' },
+      { title: 'FAQ', value: 'Faq', route: 'Faq' },
     ],
   },
   { title: 'Выход', value: 'Auth', icon: 'mdi-exit-to-app', route: 'Auth' },
