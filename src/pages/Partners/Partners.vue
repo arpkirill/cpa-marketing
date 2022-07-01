@@ -11,7 +11,7 @@
               <th class="text-left" >
                 Дата регистрации
               </th>
-              <th >Фамилия Имя Отчество</th>
+              <th >Партнер</th>
               <th class="text-left" >
                 Статус
               </th>
@@ -22,6 +22,8 @@
           </thead>
           <tbody >
             <tr
+              style="cursor: pointer"
+              @click="$router.push({ name: 'Partner', params: { id: item.id } })"
               v-for="item in partners"
               :key="item.id" >
               <td class="pa-4" >
@@ -52,6 +54,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
- 
-</style>
+<style lang="scss"></style>

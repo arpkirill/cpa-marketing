@@ -8,6 +8,7 @@ import Profile from '@/pages/Profile/Profile'
 import Finance from '@/pages/Finance/Finance'
 import Clients from '@/pages/Clients/Clients'
 import Partners from '@/pages/Partners/Partners'
+import Partner from '@/pages/Partner/Partner'
 import Support from '@/pages/Support/Support'
 import Chat from '@/pages/Chat/Chat'
 import Offer from '@/pages/Offer/Offer'
@@ -69,6 +70,14 @@ const routes = [
         component: Partners,
         meta: {
           title: 'Агенты',
+        },
+      },
+      {
+        path: 'partners/:id',
+        name: 'Partner',
+        component: Partner,
+        meta: {
+          title: 'Агент',
         },
       },
       {
