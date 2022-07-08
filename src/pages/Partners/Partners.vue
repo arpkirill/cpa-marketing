@@ -1,6 +1,53 @@
 <template >
   <v-container fluid >
     <v-row >
+      <v-col
+        cols="12"
+        sm="6" >
+        <v-card class="pa-3" >
+          <v-card-title >
+            <v-spacer />
+            <div class="text-center" >
+              <v-icon size="64" >
+                mdi-chevron-right
+              </v-icon>
+              <div >Всего партнеров</div>
+            </div>
+            <v-spacer />
+          </v-card-title>
+          <v-card-text >
+            <div class="text-h5 text-center" >
+              50
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col
+        cols="12"
+        sm="6" >
+        <v-card class="pa-3" >
+          <v-card-title >
+            <v-spacer />
+            <div class="text-center" >
+              <v-icon size="64" >
+                mdi-chevron-right
+              </v-icon>
+              <div >Мой куратор</div>
+            </div>
+            <v-spacer />
+          </v-card-title>
+          <v-card-text >
+            <div
+              class="text-h5 text-center"
+              style="cursor: pointer"
+              @click="$router.push({ name: 'Partner', params: { id: '0' } })" >
+              Иван Иванов
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row >
       <v-col >
         <v-table >
           <thead class="pl-2" >

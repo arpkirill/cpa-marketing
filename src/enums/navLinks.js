@@ -7,7 +7,7 @@ export default [
     route: 'Profile',
   },
   { title: 'Клиенты', value: 'Clients', icon: 'mdi-account-group', route: 'Clients' },
-  { title: 'Агенты', value: 'Partners', icon: 'mdi-account-tie', route: 'Partners' },
+  { title: 'Партнеры', value: 'Partners', icon: 'mdi-account-tie', route: 'Partners' },
   { title: 'Финансы', value: 'Finance', icon: 'mdi-credit-card', route: 'Finance' },
   {
     title: 'Помощь',
