@@ -109,7 +109,7 @@ const routes = [
             name: 'Faq',
             component: Faq,
             meta: {
-              title: 'FAQ',
+              title: 'Частые вопросы',
             },
           },
         ],

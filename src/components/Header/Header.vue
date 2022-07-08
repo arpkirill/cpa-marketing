@@ -27,9 +27,11 @@
       Личный кабинет
     </v-toolbar-title>
     <v-spacer />
+    <!--
     <div class="d-flex align-center" >
       <AppBarUserMenu />
     </div>
+    -->
   </v-app-bar>
 </template>
 
@@ -41,7 +43,7 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Header',
   components: {
-    AppBarUserMenu,
+    // AppBarUserMenu,
   },
   data() {
     return {
