@@ -2,6 +2,7 @@ const { defineConfig } = require( '@vue/cli-service' )
 const path = require( 'path' )
 
 module.exports = defineConfig( {
+  publicPath: '/kirill.github.io/',
   transpileDependencies: true,
   css: {
     loaderOptions: {
