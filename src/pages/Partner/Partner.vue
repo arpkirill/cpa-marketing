@@ -4,7 +4,12 @@
       <v-card-title >Иванов Иван Иванович </v-card-title>
       <v-card-text >
         <v-row >
-          <v-col >пав </v-col>
+          <v-col >
+            <div >Куратор: Иванов Иван</div>
+            <div >Статус: Партнер</div>
+            <div >Телеграмм: https://vk.com/durov</div>
+            <div >Вконтакте: https://vk.com/durov</div>
+          </v-col>
         </v-row>
       </v-card-text>
     </v-card>
