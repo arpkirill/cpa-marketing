@@ -35,6 +35,19 @@
           @click="$router.push({ name: navLink.route })" />
       </template>
     </v-list>
+    <template v-slot:append >
+      <div class="pa-5 text-subtitle-1" >
+        <div >
+          <v-icon >
+            mdi-face-agent
+          </v-icon>
+          Служба поддержки
+        </div>
+        <div class="text-h6" >
+          8-800-555-35-35
+        </div>
+      </div>
+    </template>
   </v-navigation-drawer>
 </template>
 
