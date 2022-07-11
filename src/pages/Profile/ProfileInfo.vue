@@ -31,6 +31,7 @@
           <v-text-field
             density="comfortable"
             variant="filled"
+            v-maska="'+7 (###) ###-##-##'"
             label="Телефон"
             required />
         </v-col>
