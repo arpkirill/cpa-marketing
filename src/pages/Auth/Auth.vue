@@ -27,11 +27,10 @@
           <v-col
             cols="12"
             class="login-part d-flex align-center justify-center flex-column" >
-            <div class="login-wrapper pt-16 pt-sm-0 pb-8" >
+            <div class="login-wrapper" >
               <v-tabs
                 grow
                 v-model="tab"
-                class="mt-16"
                 light >
                 <v-tab :value="0" >
                   Авторизация
