@@ -16,7 +16,7 @@ export default [
     route: 'Support',
     subLinks: [
       { title: 'Правила', value: 'Offer', route: 'Offer' },
-      { title: 'Чат', value: 'Chat', route: 'Chat' },
+      { title: 'Контакты', value: 'Contacts', route: 'Contacts' },
       { title: 'Частые вопросы', value: 'Faq', route: 'Faq' },
     ],
   },

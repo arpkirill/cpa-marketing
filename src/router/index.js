@@ -10,7 +10,7 @@ import Clients from '@/pages/Clients/Clients'
 import Partners from '@/pages/Partners/Partners'
 import Partner from '@/pages/Partner/Partner'
 import Support from '@/pages/Support/Support'
-import Chat from '@/pages/Chat/Chat'
+import Contacts from '@/pages/Contacts/Contacts'
 import Offer from '@/pages/Offer/Offer'
 import Error from '@/pages/Error/Error'
 import Faq from '@/pages/FAQ/FAQ'
@@ -92,11 +92,11 @@ const routes = [
         },
         children: [
           {
-            path: 'chat',
-            name: 'Chat',
-            component: Chat,
+            path: 'contacts',
+            name: 'Contacts',
+            component: Contacts,
             meta: {
-              title: 'Чат',
+              title: 'Контакты',
             },
           },
           {

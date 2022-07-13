@@ -3,7 +3,7 @@
   <Sidebar />
   <v-main class="content mx-0 mx-md-2" >
     <div class="wrapper" >
-      <!-- <Breadcrumbs v-if="$route.meta.hasOwnProperty('isBreadcrumbs') ? $route.meta.isBreadcrumbs : true" /> -->
+      <Breadcrumbs v-if="$route.meta.hasOwnProperty('isBreadcrumbs') ? $route.meta.isBreadcrumbs : true" />
       <!-- <v-btn @click="$store.dispatch('snackbar/showSnackbar', 'text')" /> -->
 
       <router-view v-slot="{ Component }" >
@@ -34,7 +34,7 @@ export default {
     // Footer,
     Header,
     Sidebar,
-    // Breadcrumbs,
+    Breadcrumbs,
   },
 }
 </script>
