@@ -1,7 +1,7 @@
 export default {
   namespaced: true,
   state: {
-    drawer: true,
+    drawer: false,
     darkTheme: false,
   },
   mutations: {
