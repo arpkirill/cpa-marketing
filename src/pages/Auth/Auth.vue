@@ -19,14 +19,15 @@
       <v-col
         cols="12"
         lg="5"
-        class="login-part d-flex align-center justify-center" >
+        class="login-part d-flex align-center justify-center"
+        style="overflow-x: hidden" >
         <v-row
           no-gutters
           class="align-start" >
           <v-col
             cols="12"
             class="login-part d-flex align-center justify-center flex-column" >
-            <div class="login-wrapper pt-16 pt-sm-0" >
+            <div class="login-wrapper pt-16 pt-sm-0 pb-8" >
               <v-tabs
                 grow
                 v-model="tab"
@@ -100,7 +101,6 @@ export default {
   overflow-y: auto;
   .login-wrapper {
     height: auto;
-    width: 65%;
     .login-slogan {
       color: #4a4a4a;
     }
