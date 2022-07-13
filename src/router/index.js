@@ -24,6 +24,9 @@ const routes = [
     path: '/auth',
     name: 'Auth',
     component: Auth,
+    meta: {
+      title: 'Авторизация',
+    },
   },
   {
     path: '/app',
@@ -130,6 +133,13 @@ const routes = [
 const router = createRouter( {
   history: createWebHistory( process.env.BASE_URL ),
   routes,
+} )
+
+router.beforeEach( ( to, from, next ) => {
+  if ( to.meta.title ) {
+    document.title = to.meta.title
+  }
+  next()
 } )
 
 export default router
