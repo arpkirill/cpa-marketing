@@ -4,7 +4,7 @@
       <v-col
         sm="6"
         cols="12" >
-        <Youtube url="https://www.youtube.com/watch?v=m62lCNWUFHA" />
+        <Youtube url="https://www.youtube.com/watch?v=V0hagz_8L3M" />
       </v-col>
       <v-col
         sm="6"
