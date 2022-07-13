@@ -2,6 +2,7 @@
   <v-snackbar
     v-model="isOpen"
     timeout="-1"
+    vertical
     multi-line >
     Этот веб-сайт использует файлы cookie, чтобы обеспечить Вам наилучший опыт работы на нашем веб-сайте.
     <template v-slot:actions >
