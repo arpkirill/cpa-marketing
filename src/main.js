@@ -6,8 +6,11 @@ import Maska from 'maska'
 
 import router from './router/index'
 import store from './store/index'
+
 // import config from './config'
 import { loadFonts } from './plugins/webfontloader'
+
+import './registerServiceWorker'
 
 loadFonts()
 
