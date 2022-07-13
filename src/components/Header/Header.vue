@@ -26,8 +26,8 @@
     <v-toolbar-title :class="$vuetify.theme.dark ? 'primary--text' : null" >
       Личный кабинет
     </v-toolbar-title>
-    <v-spacer />
     <!--
+    <v-spacer />
     <div class="d-flex align-center" >
       <AppBarUserMenu />
     </div>
