@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    this.isOpen = this.isAccepted()
+    this.isOpen = !this.isAccepted()
   },
   methods: {
     accept() {
@@ -36,7 +36,7 @@ export default {
       this.isOpen = false
     },
     isAccepted() {
-      return localStorage.getItem( 'cookie:accepted' ) === 'true' ? false : true
+      return localStorage.getItem( 'cookie:accepted' ) === 'true' ? true : false
     },
   },
 }
