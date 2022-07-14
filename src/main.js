@@ -12,6 +12,8 @@ import config from './config'
 
 axios.defaults.baseURL = config.hostApi // TODO На реальном проекте baseURLApi
 axios.defaults.headers.common[ 'Content-Type' ] = 'application/json'
+axios.defaults.headers.common[ 'x-mock-match-request-body' ] = 'true'
+
 const token = localStorage.getItem( 'token' )
 if ( token ) {
   axios.defaults.headers.common[ 'Authorization' ] = 'Bearer ' + token
