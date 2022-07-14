@@ -1,4 +1,5 @@
 import router from '../../router/index'
+import axios from 'axios'
 
 export default {
   namespaced: true,
@@ -12,6 +13,7 @@ export default {
       state.isFetching = true
     },
     LOGIN_FAILURE( state, payload ) {
+      setTimeout( ( state.isFetching = false ), 2000 )
       state.isFetching = false
       state.errorMessage = payload
       state.currentUser = null
@@ -27,8 +29,8 @@ export default {
       dispatch( 'requestLogin' )
       if ( payload.email && payload.password ) {
         try {
-          const res = { data: 'token1' } // TODO auth/signin
-          const token = res.data
+          const res = await axios.post( '/auth/signin/local', payload )
+          const token = res.data.token
           dispatch( 'receiveToken', token )
           dispatch( 'doInit' )
         } catch ( e ) {

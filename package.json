@@ -10,6 +10,7 @@
   "dependencies": {
     "@jbtje/vue3pdf": "^2.1.0",
     "@mdi/font": "5.9.55",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "css-loader": "^5.2.7",
     "font-awesome": "^4.7.0",
