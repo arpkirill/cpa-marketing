@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'FormLogin',
@@ -109,6 +109,15 @@ export default {
     },
   },
   computed: {
+    ...mapState( 'auth', {
+      isFetching: ( state ) => state.isFetching,
+      errorMessage: ( state ) => state.errorMessage,
+    } ),
+    ...mapState( 'register', {
+      regIsFetching: ( state ) => state.isFetching,
+      regErrorMessage: ( state ) => state.errorMessage,
+    } ),
+
     isFormValid() {
       return this.password.length !== 0 && this.email.length !== 0
     },
