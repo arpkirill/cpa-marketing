@@ -160,7 +160,7 @@
               full-width
               hide-details
               append-inner-icon="mdi-content-copy"
-              @click:append-inner="show1 = !show1" >104034
+              @click:append-inner="copy('localhost:8080/p/104034')" >104034
             </v-text-field>
           </v-card-actions>
         </v-card>
@@ -189,7 +189,7 @@
               full-width
               hide-details
               append-inner-icon="mdi-content-copy"
-              @click:append-inner="show1 = !show1" >localhost:8080/p/104034
+              @click:append-inner="copy('localhost:8080/p/104034')" >localhost:8080/p/104034
             </v-text-field>
           </v-card-actions>
         </v-card>
@@ -218,7 +218,7 @@
               full-width
               hide-details
               append-inner-icon="mdi-content-copy"
-              @click:append-inner="copy('localhost:8080/p/104034э')" >localhost:8080/p/104034
+              @click:append-inner="copy('localhost:8080/p/104034')" >localhost:8080/p/104034
             </v-text-field>
           </v-card-actions>
         </v-card>
