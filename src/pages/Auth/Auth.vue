@@ -104,7 +104,7 @@ export default {
 
 .login-part {
   width: 100%;
-  // height: 100vh;
+  height: 85vh;
   background-color: #f6f7ff;
   overflow-y: auto;
   .login-wrapper {
