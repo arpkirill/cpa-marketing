@@ -23,9 +23,12 @@
         style="overflow-x: hidden" >
         <v-row
           no-gutters
-          class="align-start" >
+          class="align-start justify-center" >
           <v-col
             cols="12"
+            sm="8"
+            md="6"
+            lg="9"
             class="login-part d-flex align-center justify-center flex-column" >
             <div class="login-wrapper" >
               <v-tabs
@@ -44,7 +47,7 @@
                   <FormLogin />
                 </v-window-item>
                 <v-window-item :value="1" >
-                  <FormLogin />
+                  <FormRegister />
                 </v-window-item>
               </v-window>
             </div>
@@ -57,13 +60,14 @@
 
 <script>
 import FormLogin from './FormLogin.vue'
+import FormRegister from './FormRegister.vue'
 
 export default {
   name: 'Auth',
-  components: { FormLogin },
+  components: { FormLogin, FormRegister },
   data() {
     return {
-      tab: null,
+      tab: 1,
     }
   },
 }
@@ -100,6 +104,7 @@ export default {
   overflow-y: auto;
   .login-wrapper {
     height: auto;
+    width: 100%;
     .login-slogan {
       color: #4a4a4a;
     }

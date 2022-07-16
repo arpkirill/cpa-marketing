@@ -4,7 +4,7 @@
       <v-row class="flex-column" >
         <v-col >
           <p class="login-slogan display-2 text-center font-weight-medium my-10 text-h4" >
-            Добро пожаловать, Пользователь
+            Создайте Ваш аккаунт
           </p>
           <v-btn
             height="45"
@@ -15,7 +15,7 @@
             class="google"
             style="text-transform: none"
             @click="googleLogin" >
-            Войти с помощью Google
+            С помощью Google
           </v-btn>
         </v-col>
         <v-col
@@ -34,43 +34,33 @@
           <v-col >
             <v-text-field
               light
-              id="email"
-              ref="email"
-              v-model="email"
-              :rules="emailRules"
+              v-model="createEmail"
+              :rules="createEmailRules"
               single-line
               label="Адрес электронной почты"
-              required
-              @keydown.enter="isFormValid && login()" ></v-text-field>
+              required ></v-text-field>
             <v-text-field
               light
-              id="password"
-              ref="password"
-              v-model="password"
+              v-model="createPassword"
               :rules="passRules"
               single-line
               type="password"
               label="Пароль"
-              required
-              @keydown.enter="isFormValid && login()" ></v-text-field>
+              required ></v-text-field>
           </v-col>
           <v-col class="d-flex justify-space-between" >
             <v-btn
               class="text-capitalize"
               large
-              :disabled="!isFormValid"
+              :disabled="createEmail.length === 0 || createPassword === 0"
               color="primary"
-              :loading="isFetching"
-              @click="login" >
-              Войти
-            </v-btn>
-            <v-btn
-              large
-              text
-              class="primary--text"
+              :loading="regIsFetching"
+              block
+              height="45"
+              elevation="0"
               style="text-transform: none"
-              @click="$router.push('/forgot')" >
-              Забыл пароль
+              @click="register" >
+              Создать аккаунт
             </v-btn>
           </v-col>
         </v-form>
@@ -83,39 +73,35 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'FormLogin',
+  name: 'FormRegister',
   data() {
     return {
       valid: true,
-      email: 'mail@google.com',
-      emailRules: [
+      createEmail: 'mail@google.com',
+      createEmailRules: [
         ( v ) => !!v || 'Обязательное поле',
         ( v ) => /.+@.+/.test( v ) || 'Почта должна быть корректная',
         ( v ) => v.toLowerCase() === this.email,
       ],
-      password: 'password',
+      createPassword: 'password',
       passRules: [ ( v ) => !!v || 'Обязательное поле', ( v ) => v.length >= 6 || 'Минимум 6 символов' ],
     }
   },
   methods: {
-    ...mapActions( 'auth', [ 'loginUser' ] ),
-    login() {
-      const email = this.email
-      const password = this.password
-      this.loginUser( { email, password } )
-    },
-    googleLogin() {
-      this.loginUser( { social: 'google' } )
+    ...mapActions( 'register', [ 'registerUser', 'registerError' ] ),
+    async register() {
+      await this.registerUser( { email: this.createEmail, password: this.createPassword } ).then( () => {
+        this.createEmail = ''
+        this.createPassword = ''
+        this.loginTabs = 'tab-login'
+      } )
     },
   },
   computed: {
-    ...mapState( 'auth', {
-      isFetching: ( state ) => state.isFetching,
-      errorMessage: ( state ) => state.errorMessage,
+    ...mapState( 'register', {
+      regIsFetching: ( state ) => state.isFetching,
+      regErrorMessage: ( state ) => state.errorMessage,
     } ),
-    isFormValid() {
-      return this.password.length !== 0 && this.email.length !== 0
-    },
   },
 }
 </script>
