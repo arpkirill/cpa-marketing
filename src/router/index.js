@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import { isAuthenticated } from '../use/Auth'
+
 import Layout from '@/components/Layout/Layout'
 
 import Auth from '@/pages/Auth/Auth'
@@ -33,6 +35,9 @@ const routes = [
     name: 'Layout',
     component: Layout,
     redirect: { name: 'Dashboard' },
+    beforeEnter: ( to, from, next ) => {
+      isAuthenticated() ? next() : next( { name: 'Auth' } )
+    },
     children: [
       {
         path: 'dashboard',

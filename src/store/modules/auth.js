@@ -55,7 +55,9 @@ export default {
     },
     async findMe( { dispatch } ) {
       try {
-        const response = { login: 'Admin' } // TODO auth/me
+        const response = await axios.get( '/auth/me', {
+          headers: { 'x-mock-match-request-body': 'false' },
+        } )
         return response.data
       } catch ( e ) {
         dispatch( 'snackbar/showSnackbar', e, { root: true } )
@@ -65,6 +67,7 @@ export default {
     receiveToken( { commit }, token ) {
       localStorage.setItem( 'token', token )
 
+      axios.defaults.headers.common[ 'Authorization' ] = 'Bearer ' + token
       commit( 'LOGIN_SUCCESS' )
       router.push( '/' )
     },
