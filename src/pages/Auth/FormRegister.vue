@@ -50,7 +50,6 @@
           </v-col>
           <v-col class="d-flex justify-space-between" >
             <v-btn
-              class="text-capitalize"
               large
               :disabled="createEmail.length === 0 || createPassword === 0"
               color="primary"
@@ -77,13 +76,13 @@ export default {
   data() {
     return {
       valid: true,
-      createEmail: 'mail@google.com',
+      createEmail: '',
       createEmailRules: [
         ( v ) => !!v || 'Обязательное поле',
         ( v ) => /.+@.+/.test( v ) || 'Почта должна быть корректная',
         ( v ) => v.toLowerCase() === this.email,
       ],
-      createPassword: 'password',
+      createPassword: '',
       passRules: [ ( v ) => !!v || 'Обязательное поле', ( v ) => v.length >= 6 || 'Минимум 6 символов' ],
     }
   },
@@ -93,7 +92,7 @@ export default {
       await this.registerUser( { email: this.createEmail, password: this.createPassword } ).then( () => {
         this.createEmail = ''
         this.createPassword = ''
-        this.loginTabs = 'tab-login'
+        this.$router.replace( { query: { tab: 'login' } } )
       } )
     },
   },

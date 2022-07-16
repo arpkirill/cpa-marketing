@@ -35,18 +35,18 @@
                 grow
                 v-model="tab"
                 light >
-                <v-tab :value="0" >
+                <v-tab value="login" >
                   Авторизация
                 </v-tab>
-                <v-tab :value="1" >
+                <v-tab value="signup" >
                   Создать аккаунт
                 </v-tab>
               </v-tabs>
               <v-window v-model="tab" >
-                <v-window-item :value="0" >
+                <v-window-item value="login" >
                   <FormLogin />
                 </v-window-item>
-                <v-window-item :value="1" >
+                <v-window-item value="signup" >
                   <FormRegister />
                 </v-window-item>
               </v-window>
@@ -65,10 +65,15 @@ import FormRegister from './FormRegister.vue'
 export default {
   name: 'Auth',
   components: { FormLogin, FormRegister },
-  data() {
-    return {
-      tab: 1,
-    }
+  computed: {
+    tab: {
+      set( tab ) {
+        this.$router.replace( { query: { ...this.$route.query, tab } } )
+      },
+      get() {
+        return this.$route.query.tab
+      },
+    },
   },
 }
 </script>
@@ -99,7 +104,7 @@ export default {
 
 .login-part {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   background-color: #f6f7ff;
   overflow-y: auto;
   .login-wrapper {
