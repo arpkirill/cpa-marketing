@@ -3,7 +3,7 @@
     <v-row >
       <v-col
         cols="12"
-        md="8" >
+        md="9" >
         <v-expansion-panels >
           <v-expansion-panel
             v-for="question in questions"
@@ -14,6 +14,34 @@
             </v-expansion-panel-text>
           </v-expansion-panel>
         </v-expansion-panels>
+      </v-col>
+      <v-col
+        cols="12"
+        md="3" >
+        <v-card class="text-center pa-5" >
+          <template v-slot:title >
+            <v-spacer />
+            <v-icon size="64" >
+              mdi-chevron-right
+            </v-icon>
+            <v-spacer />
+          </template>
+          <template v-slot:text >
+            <span >
+              Не нашли ответ на свой вопрос? <br />
+              Мы здесь, чтобы помочь вам!
+            </span>
+            <div class="mt-5" >
+              <v-btn
+                large
+                variant="outlined"
+                style="text-transform: none"
+                color="primary" >
+                Связаться с нами
+              </v-btn>
+            </div>
+          </template>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
