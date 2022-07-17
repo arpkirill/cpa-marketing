@@ -38,9 +38,7 @@
     <template v-slot:append >
       <div class="pa-5 text-subtitle-1" >
         <div >
-          <v-icon >
-            mdi-face-agent
-          </v-icon>
+          <v-icon > mdi-face-agent </v-icon>
           Служба поддержки
         </div>
         <div class="text-h6" >
@@ -60,6 +58,11 @@ export default {
   data() {
     return {
       navLinks: navLinks,
+    }
+  },
+  created() {
+    if ( !this.$vuetify.display.md ) {
+      this.TOGGLE_DRAWER()
     }
   },
   computed: {

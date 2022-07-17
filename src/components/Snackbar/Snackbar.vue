@@ -2,7 +2,8 @@
   <v-snackbar
     location="top right"
     @update:modelValue="changeSnackbar"
-    :model-value="snackbar" >
+    :model-value="snackbar"
+    variant="flat" >
     {{ snackbarText }}
     <template v-slot:actions >
       <v-btn
