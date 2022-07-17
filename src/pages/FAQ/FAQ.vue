@@ -32,13 +32,7 @@
               Мы здесь, чтобы помочь вам!
             </span>
             <div class="mt-5" >
-              <v-btn
-                large
-                variant="outlined"
-                style="text-transform: none"
-                color="primary" >
-                Связаться с нами
-              </v-btn>
+              <DialogBase />
             </div>
           </template>
         </v-card>
@@ -49,11 +43,12 @@
 
 <script>
 import Youtube from '../../components/Youtube/Youtube.vue'
+import DialogBase from '../../components/Dialog/BaseDialog.vue'
 import questions from '../../enums/questions.js'
 
 export default {
   name: 'Faq',
-  components: { Youtube },
+  components: { Youtube, DialogBase },
   data() {
     return { questions: questions }
   },
