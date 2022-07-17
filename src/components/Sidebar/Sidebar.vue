@@ -61,9 +61,11 @@ export default {
     }
   },
   created() {
+    /*
     if ( !this.$vuetify.display.md ) {
       this.TOGGLE_DRAWER()
-    }
+    } 
+    */
   },
   computed: {
     ...mapGetters( { drawer: 'layout/DRAWER_STATE' } ),

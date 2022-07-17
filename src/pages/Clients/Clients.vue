@@ -69,20 +69,23 @@
               </th>
             </tr>
           </thead>
-          <tbody >
-            <tr
-              v-for="item in partners"
-              :key="item.id" >
-              <td class="pa-4" >
-                {{ item.id }}
-              </td>
-              <td >{{ item.registrationDate }}</td>
-              <td >{{ item.name }}</td>
-              <td >{{ item.paid }}₽</td>
-              <td >{{ item.stage }}</td>
-              <td >{{ item.amountOfIncome }}₽</td>
-            </tr>
-          </tbody>
+          <draggable
+            v-model="partners"
+            tag="tbody"
+            item-key="id" >
+            <template #item="{ element }" >
+              <tr style="cursor: move" >
+                <td class="pa-4" >
+                  {{ element.id }}
+                </td>
+                <td >{{ element.registrationDate }}</td>
+                <td >{{ element.name }}</td>
+                <td >{{ element.paid }}₽</td>
+                <td >{{ element.stage }}</td>
+                <td >{{ element.amountOfIncome }}₽</td>
+              </tr>
+            </template>
+          </draggable>
         </v-table>
       </v-col>
     </v-row>
@@ -91,9 +94,13 @@
 
 <script>
 import mock from '../Clients/mock'
+import draggable from 'vuedraggable'
 
 export default {
   name: 'Clients',
+  components: {
+    draggable,
+  },
   data() {
     return {
       partners: mock,
