@@ -2,17 +2,6 @@
 
 import { register } from 'register-service-worker'
 
-function askForNPerm() {
-  Notification.requestPermission( function ( result ) {
-    console.log( 'User choice', result )
-    if ( result !== 'granted' ) {
-      console.log( 'No notification permission granted!' )
-    } else {
-      configurePushSub() // Write your custom function that pushes your message
-    }
-  } )
-}
-
 if ( process.env.NODE_ENV === 'production' ) {
   register( `${ process.env.BASE_URL }service-worker.js`, {
     ready() {
@@ -21,8 +10,8 @@ if ( process.env.NODE_ENV === 'production' ) {
       )
     },
     registered() {
+      Notification.requestPermission()
       console.log( 'Service worker has been registered.' )
-      askForNPerm()
     },
     cached() {
       console.log( 'Content has been cached for offline use.' )
@@ -34,6 +23,7 @@ if ( process.env.NODE_ENV === 'production' ) {
       console.log( 'New content is available; please refresh.' )
     },
     offline() {
+      new Notification( 'offline!' )
       console.log( 'No internet connection found. App is running in offline mode.' )
     },
     error( error ) {
