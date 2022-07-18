@@ -2,6 +2,17 @@
 
 import { register } from 'register-service-worker'
 
+function askForNPerm() {
+  Notification.requestPermission( function ( result ) {
+    console.log( 'User choice', result )
+    if ( result !== 'granted' ) {
+      console.log( 'No notification permission granted!' )
+    } else {
+      configurePushSub() // Write your custom function that pushes your message
+    }
+  } )
+}
+
 if ( process.env.NODE_ENV === 'production' ) {
   register( `${ process.env.BASE_URL }service-worker.js`, {
     ready() {
@@ -11,10 +22,7 @@ if ( process.env.NODE_ENV === 'production' ) {
     },
     registered() {
       console.log( 'Service worker has been registered.' )
-      navigator.serviceWorker.ready.then( function ( serviceWorker ) {
-        serviceWorker.showNotification( 'title test' )
-      } )
-      console.log( 'Service worker has been registered 1.' )
+      askForNPerm()
     },
     cached() {
       console.log( 'Content has been cached for offline use.' )
