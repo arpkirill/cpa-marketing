@@ -26,4 +26,11 @@ module.exports = defineConfig( {
       },
     },
   },
+  pwa: {
+    name: 'PWA',
+    themeColor: '#ffd100',
+    msTileColor: '#000000',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black',
+  },
 } )
